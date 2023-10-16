@@ -15,18 +15,15 @@ jobs:
         python-version: 3.8
     - name: Install dependencies
       run: |
-        make install
-    - name: Install Pylint
-      run: pip install pylint
+        pip install pytest black  # Install both pytest and black here
     - name: Lint with pylint
       run: |
         make lint
-    - name: Install pytest
-      run: pip install pytest
     - name: Test with pytest
       run: |
         make test
+    - name: Install Black
+      run: pip install black  # Alternative: Install black here if you prefer
     - name: Format code
       run: |
         make format
-    
